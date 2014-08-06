@@ -4,14 +4,16 @@
 {% endblock %}
 {% block content %}
     <div id=user_info>
-        <h1>Hello {{ user }}</h1>
+        <h1>Hello {{ usr }}</h1>
     </div>
     <div id=lists>
     <ul>
-     {% if lists %}
-        {% for lst in lists %}
+     {% if subs %}
+        {% for sub in subs %}
             <li>{{ lst }}</li>
         {% endfor %}
+     {% else %}
+     <a href="/create_sub">create subject</a>
      {% endif %}
     </ul>
     </div>

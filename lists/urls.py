@@ -10,7 +10,6 @@ from lists import views
 #from lists.views import ClassWizard, Home
 
 urlpatterns = patterns('',
-    # Examples:
     url(r'^$', 'lists.views.home'),
     #url(r'^classform', ClassWizard.as_view([ClassForm1, ClassForm2])),
     #url(r'^newformsuccess', views.newformsuccess, name='newformsuccess'),

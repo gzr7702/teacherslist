@@ -1,9 +1,9 @@
 from django import forms
 
-class ClassForm1(forms.Form):
+class SubjectForm1(forms.Form):
     the_class = forms.CharField(max_length=200)
 
-class ClassForm2(forms.Form):
+class SubjectForm2(forms.Form):
     student1 = forms.CharField(max_length=200)
     student2 = forms.CharField(max_length=200)
     student3 = forms.CharField(max_length=200)
