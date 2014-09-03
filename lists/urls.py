@@ -13,7 +13,6 @@ urlpatterns = patterns('',
     url(r'^$', 'lists.views.home'),
     #url(r'^classform', ClassWizard.as_view([ClassForm1, ClassForm2])),
     #url(r'^newformsuccess', views.newformsuccess, name='newformsuccess'),
-    #url(r'^displaysubject', views.display_subject, name='display_subject'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

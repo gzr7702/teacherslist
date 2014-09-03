@@ -9,8 +9,9 @@ urlpatterns = patterns('',
     # url(r'^$', 'teacherslist.views.home', name='home'),
     url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout'),
-    url(r'^lists/', include('lists.urls')),
-    url(r'^create_sub/', 'lists.views.create_sub'),
+    url(r'^adduser', 'lists.form_views.signup'),
+    url(r'^$', include('lists.urls')),
+    url(r'^create_sub/', 'lists.form_views.create_subject'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

@@ -9,8 +9,8 @@ from lists.models import Subject
 @login_required
 def home(request):
     usr = request.user
-    subs = Subject.objects.filter(teacher=usr)
-    return render_to_response('home.html', {'usr':usr, 'subs':subs})
-
-def create_sub(request):
-    return render_to_response('create_sub.html')
+    if usr is not None:
+        subs = Subject.objects.filter(teacher=usr)
+        return render_to_response('home.html', {'usr':usr, 'subs':subs})
+    else:
+        return render_to_response('sign_up.html')

@@ -1,11 +1,18 @@
-from django import forms
+from django.forms import ModelForm
+from django import forms 
+from django.http import HttpRequest
+from lists.models import Subject, Student, Teacher
 
-class SubjectForm1(forms.Form):
-    the_class = forms.CharField(max_length=200)
+class SubjectForm(ModelForm):
+                    #need to filter students by school
+    students = forms.ModelChoiceField(queryset=Student.objects.filter(school__name="PS222"), required=False)
+    #students = forms.ModelChoiceField(queryset=Student.objects.filter(school__name=HttpRequest.user), required=False)
+    class Meta:
+        model = Subject
+        fields = ['name', 'students']
 
-class SubjectForm2(forms.Form):
-    student1 = forms.CharField(max_length=200)
-    student2 = forms.CharField(max_length=200)
-    student3 = forms.CharField(max_length=200)
-    student4 = forms.CharField(max_length=200)
-    student5 = forms.CharField(max_length=200)
+class SignUpForm(ModelForm):
+    class Meta:
+        model = Teacher
+        #fields = ['first_name', 'school']
+
